@@ -39,8 +39,9 @@ ngx_buf_t *ngx_buf_from_data(ngx_pool_t *pool, const void *data, size_t length)
 
 void debug_string( const char *msg, int length )
 {
+  size_t ret;
   if( msg && length > 0 ) {
-    fwrite( msg, sizeof(char), length, stdout );
+    ret = fwrite( msg, sizeof(char), length, stdout );
   }
   else {
     printf("(NULL)");
